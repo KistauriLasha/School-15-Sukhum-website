@@ -17,11 +17,6 @@ export function Stats() {
       value: "3",
       label: "Этажа современного здания",
     },
-    {
-      icon: Trophy,
-      value: "15+",
-      label: "Наград и достижений",
-    },
   ]
 
   return (
