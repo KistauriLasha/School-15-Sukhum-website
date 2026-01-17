@@ -4,46 +4,21 @@ import { Dumbbell, Utensils, BookOpen, FlaskConical } from "lucide-react"
 export function Facilities() {
   const facilities = [
     {
-      icon: BookOpen,
-      title: "Современная библиотека",
-      description: "Более 10,000 книг и электронных ресурсов для всестороннего развития учеников",
-      image: "/-------------------.jpg",
-    },
-    {
       icon: Dumbbell,
       title: "Спортивная площадка",
-      description: "Современное спортивное оборудование для занятий физкультурой и спортивных секций",
-      image: "/----------------------.jpg",
-    },
-    {
-      icon: Utensils,
-      title: "Школьный буфет",
-      description: "Здоровое и вкусное питание, разработанное с учетом потребностей растущего организма",
-      image: "/-----------------.jpg",
-    },
-    {
-      icon: FlaskConical,
-      title: "Лаборатории",
-      description: "Оборудованные кабинеты физики, химии и биологии для практических занятий",
-      image: "/--------------------.jpg",
+      description: "Современная спортплощадка, созданная РосАтомом, благодаря которой дети с удовольствием проводят уроки физкультуры и досуг на переменах",
+      image: "/sports-ground.jpg",
     },
   ]
 
   return (
     <section className="py-20 bg-muted/50">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-balance">Современная инфраструктура</h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto text-balance">
-            Мы создали комфортную среду для обучения и развития каждого ученика
-          </p>
-        </div>
-
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="flex justify-center">
           {facilities.map((facility, index) => {
             const Icon = facility.icon
             return (
-              <Card key={index} className="overflow-hidden hover:shadow-lg transition-shadow">
+              <Card key={index} className="overflow-hidden hover:shadow-lg transition-shadow max-w-lg w-full">
                 <div className="aspect-video relative bg-muted">
                   <img
                     src={facility.image || "/placeholder.svg"}

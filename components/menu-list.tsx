@@ -10,26 +10,6 @@ interface MenuItem {
 }
 
 const menuItems: MenuItem[] = [
-  // Горячие блюда
-  { name: "Борщ с мясом", price: 85, category: "Первые блюда", icon: Soup },
-  { name: "Суп куриный с лапшой", price: 75, category: "Первые блюда", icon: Soup },
-  { name: "Суп гороховый", price: 70, category: "Первые блюда", icon: Soup },
-  { name: "Солянка", price: 95, category: "Первые блюда", icon: Soup },
-
-  // Вторые блюда
-  { name: "Котлета с пюре", price: 120, category: "Вторые блюда", icon: Beef },
-  { name: "Плов с курицей", price: 110, category: "Вторые блюда", icon: Beef },
-  { name: "Гуляш с гречкой", price: 125, category: "Вторые блюда", icon: Beef },
-  { name: "Рыба запеченная с рисом", price: 130, category: "Вторые блюда", icon: Beef },
-  { name: "Макароны с сосисками", price: 95, category: "Вторые блюда", icon: Beef },
-  { name: "Тефтели в томатном соусе", price: 115, category: "Вторые блюда", icon: Beef },
-
-  // Салаты
-  { name: "Салат овощной", price: 50, category: "Салаты", icon: Salad },
-  { name: "Салат «Витаминный»", price: 60, category: "Салаты", icon: Salad },
-  { name: "Салат из свеклы", price: 45, category: "Салаты", icon: Salad },
-  { name: "Салат «Греческий»", price: 75, category: "Салаты", icon: Salad },
-
   // Выпечка
   { name: "Пирожок с мясом", price: 40, category: "Выпечка", icon: Sandwich },
   { name: "Пирожок с капустой", price: 35, category: "Выпечка", icon: Sandwich },
@@ -47,21 +27,11 @@ const menuItems: MenuItem[] = [
   { name: "Печенье", price: 25, category: "Напитки и десерты", icon: Dessert },
 ]
 
-const categories = ["Первые блюда", "Вторые блюда", "Салаты", "Выпечка", "Напитки и десерты"]
+const categories = ["Выпечка", "Напитки и десерты"]
 
 export function MenuList() {
   return (
     <div className="max-w-5xl mx-auto space-y-8">
-      <Card className="bg-accent/10 border-accent/20">
-        <CardContent className="p-6">
-          <p className="text-center text-muted-foreground leading-relaxed">
-            <strong className="text-foreground">Время работы столовой:</strong> 08:00 - 15:00 (Понедельник - Пятница)
-            <br />
-            <strong className="text-foreground">Большая перемена:</strong> 10:10 - 10:25 и 11:10 - 11:30
-          </p>
-        </CardContent>
-      </Card>
-
       {categories.map((category) => {
         const items = menuItems.filter((item) => item.category === category)
         return (
@@ -95,26 +65,6 @@ export function MenuList() {
           </Card>
         )
       })}
-
-      <Card className="bg-muted/50">
-        <CardContent className="p-6">
-          <h3 className="font-bold mb-3 text-lg">Комплексные обеды</h3>
-          <div className="space-y-2 text-sm text-muted-foreground">
-            <div className="flex justify-between">
-              <span>• Первое + Второе + Салат + Компот</span>
-              <strong className="text-foreground">250 ₽</strong>
-            </div>
-            <div className="flex justify-between">
-              <span>• Второе + Салат + Напиток</span>
-              <strong className="text-foreground">180 ₽</strong>
-            </div>
-            <div className="flex justify-between">
-              <span>• Завтрак школьника (до 10:00)</span>
-              <strong className="text-foreground">120 ₽</strong>
-            </div>
-          </div>
-        </CardContent>
-      </Card>
     </div>
   )
 }
