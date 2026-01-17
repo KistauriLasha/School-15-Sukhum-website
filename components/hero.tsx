@@ -15,8 +15,7 @@ export function Hero() {
             Школа №15 имени А. К. Назадзе
           </h1>
           <p className="mb-8 text-lg md:text-xl text-primary-foreground/90 leading-relaxed text-balance">
-            Престижное образовательное учреждение города Сухум с богатой историей и современными образовательными
-            программами
+            Мы рады приветствовать вас на официальном сайте Средней школы №15 имени Александры Константиновны Назадзе. Наша школа – это не просто образовательное учреждение, это дружная семья с богатой историей, где каждый ученик и учитель – уникальная личность.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button size="lg" variant="secondary" className="w-full sm:w-auto">
