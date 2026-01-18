@@ -29,7 +29,6 @@ export function Header() {
     { href: "/schedule", label: "Расписание" },
     { href: "/menu", label: "Меню столовой" },
     { href: "/news", label: "Новости" },
-    { href: "/cameras", label: "Камеры" },
   ]
 
   return (
