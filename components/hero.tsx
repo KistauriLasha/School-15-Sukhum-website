@@ -13,18 +13,6 @@ export function Hero() {
           <p className="mb-8 text-lg md:text-xl text-primary-foreground/90 leading-relaxed text-balance">
             Мы рады приветствовать вас на официальном сайте Средней школы №15 имени Александры Константиновны Назадзе. Наша школа – это не просто образовательное учреждение, это дружная семья с богатой историей, где каждый ученик и учитель – уникальная личность.
           </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Button size="lg" variant="secondary" className="w-full sm:w-auto">
-              Узнать больше
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="w-full sm:w-auto bg-transparent border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary"
-            >
-              Контакты
-            </Button>
-          </div>
         </div>
       </div>
     </section>
