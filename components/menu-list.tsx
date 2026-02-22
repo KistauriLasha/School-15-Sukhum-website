@@ -38,7 +38,7 @@ export function MenuList() {
         return (
           <Card key={category}>
             <CardHeader>
-              <CardTitle className="text-2xl">{category}</CardTitle>
+              <CardTitle className="text-2xl text-center">{category}</CardTitle>
             </CardHeader>
             <CardContent>
               <div className="grid sm:grid-cols-2 gap-4">
