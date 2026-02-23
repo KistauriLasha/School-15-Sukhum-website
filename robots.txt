@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://school-15-sukhum-website.vercel.app/sitemap.xml
