@@ -59,9 +59,6 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-8 pt-8 border-t border-border text-center text-sm text-muted-foreground">
-          <p>© 2026 Школа №15 им. А. К. Назадзе. Все права защищены.</p>
-        </div>
       </div>
     </footer>
   )
