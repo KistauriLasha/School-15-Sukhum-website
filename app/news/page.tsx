@@ -1,6 +1,6 @@
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
-import { Newspaper } from "lucide-react"
+import { Newspaper, Calendar } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
 
 export default function NewsPage() {
@@ -36,6 +36,10 @@ export default function NewsPage() {
                     <Newspaper className="h-6 w-6 text-primary" />
                   </div>
                   <div>
+                    <div className="flex items-center gap-2 text-sm text-muted-foreground mb-2">
+                      <Calendar className="h-4 w-4" />
+                      <span>27.02.2026</span>
+                    </div>
                     <h3 className="text-xl font-bold mb-2">Неделя английского языка</h3>
                     <p className="text-muted-foreground leading-relaxed">
                       Наша тематическая неделя подошла к концу, оставив массу ярких впечатлений и новых знаний.
