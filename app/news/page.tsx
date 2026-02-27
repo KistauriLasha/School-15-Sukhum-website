@@ -1,6 +1,6 @@
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
-import { Newspaper, BookOpen } from "lucide-react"
+import { Newspaper, Calendar } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
 
 export default function NewsPage() {
@@ -31,9 +31,13 @@ export default function NewsPage() {
                 />
               </div>
               <CardContent className="p-6">
+                <div className="flex items-center gap-2 text-sm text-muted-foreground mb-4">
+                  <Calendar className="h-4 w-4" />
+                  <span>27.02.2026</span>
+                </div>
                 <div className="flex items-start gap-4">
                   <div className="rounded-lg bg-primary/10 p-3 shrink-0">
-                    <BookOpen className="h-6 w-6 text-primary" />
+                    <Newspaper className="h-6 w-6 text-primary" />
                   </div>
                   <div>
                     <h3 className="text-xl font-bold mb-2">Неделя английского языка</h3>
