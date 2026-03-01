@@ -2,8 +2,6 @@
 
 import { useState } from "react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { Badge } from "@/components/ui/badge"
 import {
   Select,
   SelectContent,
@@ -113,7 +111,6 @@ classes.forEach((className) => {
 
 export function ScheduleTable() {
   const [selectedClass, setSelectedClass] = useState("5А")
-  const [activeGrade, setActiveGrade] = useState("5")
 
   const grades = [
     { label: "5 класс", classes: ["5А", "5Б", "5В"] },
@@ -125,28 +122,12 @@ export function ScheduleTable() {
     { label: "11 класс", classes: ["11А", "11Б", "11В"] },
   ]
 
-  const handleGradeChange = (gradeValue: string) => {
-    setActiveGrade(gradeValue)
-    const gradeIndex = parseInt(gradeValue) - 5
-    const gradeClasses = grades[gradeIndex].classes
-    if (!gradeClasses.includes(selectedClass)) {
-      setSelectedClass(gradeClasses[0])
-    }
-  }
-
-  const handleClassChange = (className: string) => {
-    setSelectedClass(className)
-    const gradeValue = className.match(/\d+/)?.[0]
-    if (gradeValue) {
-      setActiveGrade(gradeValue)
-    }
-  }
-
   return (
-    <div className="space-y-6">
-      <div className="flex justify-center md:justify-start mb-4">
-        <Select value={selectedClass} onValueChange={handleClassChange}>
-          <SelectTrigger className="w-[180px]">
+    <div className="space-y-8">
+      <div className="flex flex-col md:flex-row items-center justify-center gap-4 py-6 bg-muted/30 rounded-lg">
+        <span className="text-xl font-semibold">Выберите ваш класс:</span>
+        <Select value={selectedClass} onValueChange={setSelectedClass}>
+          <SelectTrigger className="w-[200px] h-12 text-lg">
             <SelectValue placeholder="Выберите класс" />
           </SelectTrigger>
           <SelectContent>
@@ -164,77 +145,48 @@ export function ScheduleTable() {
         </Select>
       </div>
 
-      <Tabs value={activeGrade} onValueChange={handleGradeChange} className="w-full">
-        <TabsList className="grid w-full grid-cols-7 mb-8">
-          {grades.map((grade, index) => (
-            <TabsTrigger key={index} value={String(5 + index)}>
-              {grade.label}
-            </TabsTrigger>
-          ))}
-        </TabsList>
-
-        {grades.map((grade, gradeIndex) => (
-          <TabsContent key={gradeIndex} value={String(5 + gradeIndex)}>
-            <div className="mb-6">
-              <div className="flex flex-wrap gap-2">
-                {grade.classes.map((className) => (
-                  <Badge
-                    key={className}
-                    variant={selectedClass === className ? "default" : "outline"}
-                    className="cursor-pointer px-4 py-2"
-                    onClick={() => handleClassChange(className)}
-                  >
-                    {className}
-                  </Badge>
+      <Card className="border-2">
+        <CardHeader className="bg-primary/5 border-b">
+          <CardTitle className="text-2xl text-center">Расписание уроков для {selectedClass} класса</CardTitle>
+        </CardHeader>
+        <CardContent className="pt-6">
+          <div className="overflow-x-auto">
+            <table className="w-full border-collapse">
+              <thead>
+                <tr className="border-b border-border">
+                  <th className="text-left p-4 font-bold text-sm bg-muted/50 uppercase tracking-wider">Время</th>
+                  {days.map((day) => (
+                    <th key={day} className="text-center p-4 font-bold text-sm bg-muted/50 uppercase tracking-wider">
+                      {day}
+                    </th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                {timeSlots.map((time, timeIndex) => (
+                  <tr key={timeIndex} className="border-b border-border hover:bg-muted/30 transition-colors">
+                    <td className="p-4 text-sm font-bold text-muted-foreground whitespace-nowrap bg-muted/10">{time}</td>
+                    {days.map((day) => {
+                      const lesson = scheduleData[selectedClass]?.[day]?.[timeIndex] || "-"
+                      return (
+                        <td key={day} className="p-4 text-center">
+                          {lesson !== "-" ? (
+                            <div className="inline-block px-4 py-2 rounded-lg bg-primary/10 text-foreground text-sm font-semibold shadow-sm border border-primary/20">
+                              {lesson}
+                            </div>
+                          ) : (
+                            <span className="text-muted-foreground text-sm italic">—</span>
+                          )}
+                        </td>
+                      )
+                    })}
+                  </tr>
                 ))}
-              </div>
-            </div>
-
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-2xl">Расписание для класса {selectedClass}</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="overflow-x-auto">
-                  <table className="w-full border-collapse">
-                    <thead>
-                      <tr className="border-b border-border">
-                        <th className="text-left p-3 font-bold text-sm bg-muted/50">Время</th>
-                        {days.map((day) => (
-                          <th key={day} className="text-center p-3 font-bold text-sm bg-muted/50">
-                            {day}
-                          </th>
-                        ))}
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {timeSlots.map((time, timeIndex) => (
-                        <tr key={timeIndex} className="border-b border-border hover:bg-muted/30 transition-colors">
-                          <td className="p-3 text-sm font-medium text-muted-foreground whitespace-nowrap">{time}</td>
-                          {days.map((day) => {
-                            const lesson = scheduleData[selectedClass]?.[day]?.[timeIndex] || "-"
-                            return (
-                              <td key={day} className="p-3 text-center">
-                                {lesson !== "-" ? (
-                                  <div className="inline-block px-3 py-2 rounded-md bg-primary/10 text-foreground text-sm font-medium">
-                                    {lesson}
-                                  </div>
-                                ) : (
-                                  <span className="text-muted-foreground text-sm">—</span>
-                                )}
-                              </td>
-                            )
-                          })}
-                        </tr>
-                      ))}
-                    </tbody>
-                  </table>
-                </div>
-              </CardContent>
-            </Card>
-          </TabsContent>
-        ))}
-      </Tabs>
+              </tbody>
+            </table>
+          </div>
+        </CardContent>
+      </Card>
     </div>
   )
 }
