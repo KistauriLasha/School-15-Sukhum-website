@@ -4,6 +4,15 @@ import { useState } from "react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Badge } from "@/components/ui/badge"
+import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectLabel,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select"
 
 const classes = [
   "5А",
@@ -104,6 +113,7 @@ classes.forEach((className) => {
 
 export function ScheduleTable() {
   const [selectedClass, setSelectedClass] = useState("5А")
+  const [activeGrade, setActiveGrade] = useState("5")
 
   const grades = [
     { label: "5 класс", classes: ["5А", "5Б", "5В"] },
@@ -115,9 +125,46 @@ export function ScheduleTable() {
     { label: "11 класс", classes: ["11А", "11Б", "11В"] },
   ]
 
+  const handleGradeChange = (gradeValue: string) => {
+    setActiveGrade(gradeValue)
+    const gradeIndex = parseInt(gradeValue) - 5
+    const gradeClasses = grades[gradeIndex].classes
+    if (!gradeClasses.includes(selectedClass)) {
+      setSelectedClass(gradeClasses[0])
+    }
+  }
+
+  const handleClassChange = (className: string) => {
+    setSelectedClass(className)
+    const gradeValue = className.match(/\d+/)?.[0]
+    if (gradeValue) {
+      setActiveGrade(gradeValue)
+    }
+  }
+
   return (
     <div className="space-y-6">
-      <Tabs defaultValue="5" className="w-full">
+      <div className="flex justify-center md:justify-start mb-4">
+        <Select value={selectedClass} onValueChange={handleClassChange}>
+          <SelectTrigger className="w-[180px]">
+            <SelectValue placeholder="Выберите класс" />
+          </SelectTrigger>
+          <SelectContent>
+            {grades.map((grade) => (
+              <SelectGroup key={grade.label}>
+                <SelectLabel>{grade.label}</SelectLabel>
+                {grade.classes.map((cls) => (
+                  <SelectItem key={cls} value={cls}>
+                    {cls}
+                  </SelectItem>
+                ))}
+              </SelectGroup>
+            ))}
+          </SelectContent>
+        </Select>
+      </div>
+
+      <Tabs value={activeGrade} onValueChange={handleGradeChange} className="w-full">
         <TabsList className="grid w-full grid-cols-7 mb-8">
           {grades.map((grade, index) => (
             <TabsTrigger key={index} value={String(5 + index)}>
@@ -135,7 +182,7 @@ export function ScheduleTable() {
                     key={className}
                     variant={selectedClass === className ? "default" : "outline"}
                     className="cursor-pointer px-4 py-2"
-                    onClick={() => setSelectedClass(className)}
+                    onClick={() => handleClassChange(className)}
                   >
                     {className}
                   </Badge>
