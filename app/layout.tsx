@@ -18,24 +18,40 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       {
-        url: "/favicon.ico",
+        url: "/favicon-16x16.png",
+        sizes: "16x16",
+        type: "image/png",
+      },
+      {
+        url: "/favicon-32x32.png",
         sizes: "32x32",
+        type: "image/png",
       },
       {
-        url: "/icon-light-32x32.png",
-        media: "(prefers-color-scheme: light)",
+        url: "/icon-192x192.png",
+        sizes: "192x192",
+        type: "image/png",
       },
       {
-        url: "/icon-dark-32x32.png",
-        media: "(prefers-color-scheme: dark)",
+        url: "/icon-512x512.png",
+        sizes: "512x512",
+        type: "image/png",
       },
       {
         url: "/icon.svg",
         type: "image/svg+xml",
       },
     ],
-    apple: "/apple-icon.png",
+    apple: [
+      {
+        url: "/apple-touch-icon.png",
+        sizes: "180x180",
+        type: "image/png",
+      },
+    ],
+    shortcut: "/favicon-32x32.png",
   },
+  manifest: "/manifest.webmanifest",
   openGraph: {
     title: "Школа №15 г. Сухум",
     description: "Сайт школы №15 города Сухум. Информация, новости, контакты.",
@@ -43,6 +59,20 @@ export const metadata: Metadata = {
     siteName: "Школа №15 г. Сухум",
     locale: "ru_RU",
     type: "website",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Школа №15 г. Сухум",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Школа №15 г. Сухум",
+    description: "Сайт школы №15 города Сухум. Информация, новости, контакты.",
+    images: ["/og-image.png"],
   },
 }
 
