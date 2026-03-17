@@ -8,7 +8,7 @@ export function Footer() {
         <div className="grid md:grid-cols-3 gap-8">
           <div>
             <div className="flex items-center gap-3 mb-4">
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-[#003D70] text-white font-bold text-lg">
+              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-[#003C6C] text-white font-bold text-lg">
                 15
               </div>
               <div>
