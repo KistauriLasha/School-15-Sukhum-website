@@ -4,8 +4,8 @@
   "description": "Сайт школы №15 города Сухум. Информация, новости, контакты.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#003D70",
-  "theme_color": "#003D70",
+  "background_color": "#003C6C",
+  "theme_color": "#003C6C",
   "icons": [
     {
       "src": "/favicon-16x16.png",
