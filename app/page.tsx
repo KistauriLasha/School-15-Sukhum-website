@@ -4,7 +4,7 @@ import { Stats } from "@/components/stats"
 import { About } from "@/components/about"
 import { Goals } from "@/components/goals"
 import { Facilities } from "@/components/facilities"
-import { Achievements } from "@/components/achievements"
+import { SchoolMap } from "@/components/school-map"
 import { Footer } from "@/components/footer"
 
 export default function HomePage() {
@@ -17,7 +17,7 @@ export default function HomePage() {
         <About />
         <Goals />
         <Facilities />
-        <Achievements />
+        <SchoolMap />
       </main>
       <Footer />
     </div>
