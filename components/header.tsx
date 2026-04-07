@@ -62,6 +62,12 @@ export function Header() {
               {theme === "light" ? <Moon className="h-5 w-5" /> : <Sun className="h-5 w-5" />}
             </Button>
 
+            <Link href="/login" className="hidden md:block">
+              <Button variant="outline" size="sm">
+                Войти
+              </Button>
+            </Link>
+
             <Button
               variant="ghost"
               size="icon"
@@ -87,6 +93,13 @@ export function Header() {
                   {item.label}
                 </Link>
               ))}
+              <Link
+                href="/login"
+                className="text-sm font-medium text-foreground/80 hover:text-foreground transition-colors px-2 py-1"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Войти
+              </Link>
             </div>
           </nav>
         )}
