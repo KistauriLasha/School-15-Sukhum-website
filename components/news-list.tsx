@@ -63,17 +63,17 @@ export function NewsList() {
                       <span>{news.date}</span>
                     </div>
                   </div>
-                  <div className="flex gap-4 items-start">
+                  <div className="flex gap-4 items-start mb-4">
                     <div className="rounded-lg bg-primary/10 p-2.5 shrink-0">
                       <Icon className="h-6 w-6 text-primary" />
                     </div>
                     <div>
-                      <h3 className="text-xl font-bold mb-3 leading-tight text-balance">{news.title}</h3>
-                      <CardContent className="p-0">
-                        <p className="text-muted-foreground leading-relaxed">{news.description}</p>
-                      </CardContent>
+                      <h3 className="text-xl font-bold leading-tight text-balance">{news.title}</h3>
                     </div>
                   </div>
+                  <CardContent className="p-0">
+                    <p className="text-muted-foreground leading-relaxed">{news.description}</p>
+                  </CardContent>
                 </CardHeader>
               </div>
             </Card>
