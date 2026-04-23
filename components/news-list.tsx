@@ -30,13 +30,13 @@ export function NewsList() {
   const getCategoryColor = (category: NewsItem["category"]) => {
     switch (category) {
       case "Достижения":
-        return "bg-accent/10 text-accent border-accent/20"
+        return "bg-transparent text-foreground border-border"
       case "Мероприятия":
-        return "bg-primary/10 text-primary border-primary/20"
+        return "bg-transparent text-foreground border-border"
       case "Спорт":
-        return "bg-chart-1/10 text-chart-1 border-chart-1/20"
+        return "bg-transparent text-foreground border-border"
       case "Объявления":
-        return "bg-chart-2/10 text-chart-2 border-chart-2/20"
+        return "bg-transparent text-foreground border-border"
       default:
         return "bg-muted text-muted-foreground"
     }
@@ -64,7 +64,7 @@ export function NewsList() {
                     </div>
                   </div>
                   <div className="flex gap-4 items-start mb-4">
-                    <div className="rounded-xl bg-primary/10 p-2.5 shrink-0">
+                    <div className="rounded-md bg-primary/10 p-2.5 shrink-0">
                       <Icon className="h-5 w-5 text-primary" />
                     </div>
                     <div>

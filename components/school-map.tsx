@@ -12,7 +12,7 @@ export function SchoolMap() {
           </p>
         </div>
 
-        <div className="rounded-xl overflow-hidden shadow-lg border border-border h-[450px] relative bg-muted">
+        <div className="rounded-md overflow-hidden shadow-lg border border-border h-[450px] relative bg-muted">
           <iframe
             src="https://yandex.ru/map-widget/v1/?ll=40.971980%2C43.015488&z=17&mode=search&ol=biz&oid=88296569640"
             width="100%"
