@@ -15,18 +15,21 @@ export function Stats() {
   ]
 
   return (
-    <section className="py-16 bg-secondary">
+    <section className="py-16 bg-muted/30">
       <div className="container mx-auto px-4">
-        <div className="flex flex-col sm:flex-row justify-center items-center gap-8 sm:gap-16">
+        <div className="flex flex-col sm:flex-row justify-center items-center gap-6 sm:gap-8">
           {stats.map((stat, index) => {
             const Icon = stat.icon
             return (
-              <div key={index} className="text-center">
-                <div className="mb-4 inline-flex items-center justify-center rounded-full bg-primary/10 p-4">
-                  <Icon className="h-8 w-8 text-primary" />
+              <div
+                key={index}
+                className="bg-card border border-border/50 rounded-2xl p-8 text-center shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 w-full max-w-[280px]"
+              >
+                <div className="mb-4 inline-flex items-center justify-center rounded-xl bg-primary/10 p-3">
+                  <Icon className="h-6 w-6 text-primary" />
                 </div>
-                <div className="mb-2 text-3xl md:text-4xl font-bold text-foreground">{stat.value}</div>
-                <div className="text-sm text-muted-foreground text-balance">{stat.label}</div>
+                <div className="mb-1 text-4xl font-bold text-foreground">{stat.value}</div>
+                <div className="text-sm font-medium text-muted-foreground text-balance">{stat.label}</div>
               </div>
             )
           })}

@@ -8,7 +8,7 @@ export default function MenuPage() {
     <div className="min-h-screen flex flex-col">
       <Header />
       <main className="flex-1">
-        <section className="bg-primary text-primary-foreground py-12">
+        <section className="bg-linear-to-r from-primary to-primary/90 text-primary-foreground py-16">
           <div className="container mx-auto px-4">
             <div className="flex items-center justify-center gap-3 mb-4">
               <UtensilsCrossed className="h-8 w-8" />

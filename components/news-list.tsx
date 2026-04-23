@@ -44,35 +44,35 @@ export function NewsList() {
 
   return (
     <div className="max-w-5xl mx-auto">
-      <div className="grid gap-6">
+      <div className="grid gap-8">
         {newsItems.map((news) => {
           const Icon = news.icon
           return (
-            <Card key={news.id} className="overflow-hidden hover:shadow-lg transition-shadow">
-              <div className="grid md:grid-cols-[300px_1fr] gap-6">
-                <div className="relative aspect-video md:aspect-square bg-muted">
+            <Card key={news.id} className="overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 border-border/50">
+              <div className="grid md:grid-cols-[320px_1fr] gap-0">
+                <div className="relative aspect-video md:aspect-auto bg-muted">
                   <img src={news.image || "/placeholder.svg"} alt={news.title} className="w-full h-full object-cover" />
                 </div>
-                <CardHeader className="pb-0">
-                  <div className="flex items-start justify-between gap-4 mb-3">
-                    <Badge variant="outline" className={getCategoryColor(news.category)}>
+                <CardHeader className="p-8">
+                  <div className="flex items-center justify-between gap-4 mb-4">
+                    <Badge variant="secondary" className={`${getCategoryColor(news.category)} px-3 py-1 text-xs font-bold uppercase tracking-wider`}>
                       {news.category}
                     </Badge>
-                    <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                    <div className="flex items-center gap-2 text-sm text-muted-foreground font-medium">
                       <Calendar className="h-4 w-4" />
                       <span>{news.date}</span>
                     </div>
                   </div>
                   <div className="flex gap-4 items-start mb-4">
-                    <div className="rounded-lg bg-primary/10 p-2.5 shrink-0">
-                      <Icon className="h-6 w-6 text-primary" />
+                    <div className="rounded-xl bg-primary/10 p-2.5 shrink-0">
+                      <Icon className="h-5 w-5 text-primary" />
                     </div>
                     <div>
-                      <h3 className="text-xl font-bold leading-tight text-balance">{news.title}</h3>
+                      <h3 className="text-2xl font-bold leading-tight text-balance tracking-tight">{news.title}</h3>
                     </div>
                   </div>
                   <CardContent className="p-0">
-                    <p className="text-muted-foreground leading-relaxed">{news.description}</p>
+                    <p className="text-muted-foreground leading-relaxed text-lg">{news.description}</p>
                   </CardContent>
                 </CardHeader>
               </div>
