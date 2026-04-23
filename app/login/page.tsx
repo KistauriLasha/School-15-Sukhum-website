@@ -17,8 +17,8 @@ export default function LoginPage() {
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
-      <main className="flex-1 flex items-center justify-center p-4">
-        <Card className="w-full max-w-md">
+      <main className="flex-1 flex items-center justify-center p-4 bg-muted/20">
+        <Card className="w-full max-w-md shadow-lg border-border/50">
           <CardHeader className="space-y-1">
             <CardTitle className="text-2xl font-bold text-center">Вход в систему</CardTitle>
             <CardDescription className="text-center">
