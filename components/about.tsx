@@ -22,7 +22,7 @@ export function About() {
             </div>
           </div>
           <div className="relative">
-            <Card className="overflow-hidden rounded-2xl shadow-2xl border-none">
+            <Card className="overflow-hidden rounded-md shadow-md border-none">
               <img src="/Aleksandra_Nozadze.jpg" alt="А. К. Назадзе" className="w-full h-auto object-cover" />
             </Card>
           </div>

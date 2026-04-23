@@ -35,7 +35,7 @@ export function Goals() {
             return (
               <Card key={index} className="border-none shadow-none bg-muted/30">
                 <CardContent className="p-8">
-                  <div className="mb-6 inline-flex items-center justify-center rounded-2xl bg-background p-4 shadow-sm">
+                  <div className="mb-6 inline-flex items-center justify-center rounded-md bg-background p-4 shadow-sm">
                     <Icon className="h-8 w-8 text-primary" />
                   </div>
                   <h3 className="text-xl font-bold mb-3">{goal.title}</h3>

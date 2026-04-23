@@ -23,9 +23,9 @@ export function Stats() {
             return (
               <div
                 key={index}
-                className="bg-card border border-border/50 rounded-2xl p-8 text-center shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 w-full max-w-[280px]"
+                className="bg-card border border-border/50 rounded-md p-8 text-center shadow-sm hover:shadow-md transition-all duration-300 w-full max-w-[280px]"
               >
-                <div className="mb-4 inline-flex items-center justify-center rounded-xl bg-primary/10 p-3">
+                <div className="mb-4 inline-flex items-center justify-center rounded-sm bg-primary/10 p-3">
                   <Icon className="h-6 w-6 text-primary" />
                 </div>
                 <div className="mb-1 text-4xl font-bold text-foreground">{stat.value}</div>
