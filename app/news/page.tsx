@@ -8,7 +8,7 @@ export default function NewsPage() {
     <div className="min-h-screen flex flex-col">
       <Header />
       <main className="flex-1">
-        <section className="bg-linear-to-r from-primary to-primary/90 text-primary-foreground py-16">
+        <section className="bg-primary text-primary-foreground py-16">
           <div className="container mx-auto px-4">
             <div className="flex items-center justify-center gap-3 mb-4">
               <Newspaper className="h-8 w-8" />
@@ -21,11 +21,32 @@ export default function NewsPage() {
         </section>
 
         <section className="py-16">
-          <div className="container mx-auto px-4 flex flex-col items-center gap-12">
-            <Card className="overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 max-w-2xl w-full border-primary/10 bg-primary/5">
+          <div className="container mx-auto px-4 flex flex-col items-center gap-8">
+            <Card className="overflow-hidden shadow-sm max-w-2xl w-full border-border/50">
               <CardContent className="p-8">
                 <div className="flex items-start gap-4 mb-6">
-                  <div className="rounded-xl bg-primary/20 p-3 shrink-0">
+                  <div className="rounded-md bg-primary/10 p-3 shrink-0">
+                    <Trophy className="h-6 w-6 text-primary" />
+                  </div>
+                  <div>
+                    <div className="flex items-center gap-2 text-sm text-muted-foreground mb-2 font-medium">
+                      <Calendar className="h-4 w-4" />
+                      <span>24.04.2026</span>
+                    </div>
+                    <h3 className="text-2xl font-bold leading-tight tracking-tight">Международная онлайн-олимпиада по информатике</h3>
+                  </div>
+                </div>
+                <p className="text-muted-foreground text-lg leading-relaxed">
+                  Ученики 10-ых и 11-ых классов нашей школы приняли участие в международной онлайн-олимпиаде по информатике от университета АГПУ.
+                  Это мероприятие позволило ребятам продемонстрировать свои навыки программирования и алгоритмического мышления на международном уровне.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="overflow-hidden shadow-sm max-w-2xl w-full border-border/50">
+              <CardContent className="p-8">
+                <div className="flex items-start gap-4 mb-6">
+                  <div className="rounded-md bg-primary/10 p-3 shrink-0">
                     <Trophy className="h-6 w-6 text-primary" />
                   </div>
                   <div>
@@ -65,10 +86,10 @@ export default function NewsPage() {
               </CardContent>
             </Card>
 
-            <Card className="overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 max-w-2xl w-full border-border/50">
+            <Card className="overflow-hidden shadow-sm max-w-2xl w-full border-border/50">
               <CardContent className="p-8">
                 <div className="flex items-start gap-4 mb-6">
-                  <div className="rounded-xl bg-primary/10 p-3 shrink-0">
+                  <div className="rounded-md bg-primary/10 p-3 shrink-0">
                     <Newspaper className="h-6 w-6 text-primary" />
                   </div>
                   <div>
