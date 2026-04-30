@@ -9,16 +9,22 @@ export function Facilities() {
       description: "Современная спортплощадка, созданная РосАтомом, благодаря которой дети с удовольствием проводят уроки физкультуры и досуг на переменах",
       image: "/sports-ground.jpg",
     },
+    {
+      icon: Utensils,
+      title: "Школьная столовая",
+      description: "Светлая и просторная столовая, предлагающая ученикам разнообразное и полезное меню. Все блюда готовятся на месте из свежих продуктов.",
+      image: "/----------------.jpg",
+    },
   ]
 
   return (
     <section className="py-20 bg-muted/50">
       <div className="container mx-auto px-4">
-        <div className="flex justify-center">
+        <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
           {facilities.map((facility, index) => {
             const Icon = facility.icon
             return (
-              <Card key={index} className="overflow-hidden hover:shadow-lg transition-shadow max-w-lg w-full">
+              <Card key={index} className="overflow-hidden transition-shadow max-w-lg w-full mx-auto">
                 <div className="aspect-video relative bg-muted">
                   <img
                     src={facility.image || "/placeholder.svg"}
